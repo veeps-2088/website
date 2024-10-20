@@ -104,6 +104,12 @@ body {
   -webkit-tap-highlight-color: rgba(255, 233, 202, 0);
 }
 
+#typed-output {
+  font-family: 'Courier New', Courier, monospace;  /* Change the font type */
+  font-size: 24px;  /* Change the font size */
+  color: #ffe9ca;  /* Change the font color */
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
