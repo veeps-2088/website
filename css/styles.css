@@ -109,14 +109,14 @@ body {
 .image-text-container {
   display: flex;
   align-items: center; /* Align text to the bottom of the image */
-  gap: 10px; /* Space between image and text */
+  gap: 50px; /* Space between image and text */
   flex-direction: row; /* Default: row for desktop (side by side) */
   justify-content: space-between; /* Ensure items are spaced out on larger screens */
 }
 
 /* Style the image */
 .logo-image {
-  width: 50%; /* Adjust the size as needed */
+  width: 30%; /* Adjust the size as needed */
   height: auto;
   flex-shrink: 0; /* Prevent image from shrinking */
 }
@@ -129,14 +129,14 @@ body {
   flex-grow: 1; /* Allow the text to grow and take up available space */
   width: 100%; /* Ensure it takes up as much width as possible */
   max-width: 1200px; /* Optional: set a maximum width for the text */
-  padding-top: 400px; 
+  padding-top: 300px; 
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .image-text-container {
       flex-direction: column; /* Stack image and text vertically */
-      align-items: center; /* Align items to the start */
+      align-items: flex-start; /* Align items to the start */
   }
 
   .typed-text {
@@ -145,7 +145,6 @@ body {
       max-width: none; /* Remove any max width on smaller screens */
       padding-top: 0px; 
       font-size: 14px;
-      padding-left: 150px;
   }
 }
 
