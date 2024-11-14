@@ -64,11 +64,6 @@
             margin: 0 auto;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
 
         p {
             font-size: 1.2rem;
@@ -87,13 +82,6 @@
 
         #contact {
             background: linear-gradient(135deg, #FFF 0%, #F8F9FA 100%);
-        }
-
-
-        .full-width-gif {
-            width: 100%;
-            height: auto;
-            display: block;
         }
 
         .contact-form {
@@ -181,6 +169,25 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #FFD54F;
         }
+
+        @font-face {
+        font-family: 'cyrene';
+        src: url('./fonts/cyrene.otf') format('opentype');
+    }
+
+    h1 {
+        font-family: 'cyrene', serif;
+        text-transform: uppercase;
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'cyrene', serif;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+    }
     </style>
 </head>
 <body>
@@ -193,9 +200,9 @@
         </ul>
     </nav>
 
-    <section>
+    <section id ="vision">
         <div class="w3-row">
-            <div class="w3-col s6"><h1>Create a Borderless Future Where All of Humanity Thrives</h1></div>
+            <div class="w3-col s6"><h1>2088 labs</h1><h3>Create a Borderless Future Where All of Humanity Thrives</h3></div>
             <div class="w3-col s6"><img src="thriving_1.gif" style="width: 100%;"></div>
           </div>
     </section>
@@ -203,19 +210,14 @@
     <section id="research">
         <div class="container">
             <h1>Research</h1>
-            <p>Our research team is dedicated to pushing the boundaries of what's possible in artificial intelligence, quantum computing, and sustainable technology.</p>
-            <p>We collaborate with leading institutions worldwide to solve complex problems and create breakthrough innovations that benefit humanity.</p>
+            <p>We explore scientific breakthroughs and responsible use cases at the intersection of artificial intelligence and the future of borderless work, commerce, and communities.</p>
         </div>
     </section>
 
     <section id="technology">
         <div class="container">
             <h1>Technology</h1>
-            <p>We develop state-of-the-art solutions in:</p>
-            <p>• Artificial Intelligence and Machine Learning<br>
-               • Quantum Computing Applications<br>
-               • Sustainable Energy Systems<br>
-               • Advanced Materials Science</p>
+            <p>We build commercial-ready AI products that empower humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world.</p>
         </div>
     </section>
 
