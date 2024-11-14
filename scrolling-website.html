@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Name</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * {
@@ -78,46 +77,6 @@
             margin-bottom: 1.5rem;
         }
 
-        #vision {
-            background: linear-gradient(135deg, #FFF 0%, #F8F9FA 100%);
-            height: 400vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .vision-text {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 5vw;
-            font-weight: 900;
-            white-space: nowrap;
-            line-height: 1.2;
-        }
-
-        .create-a {
-            left: 5vw;
-            color: #333;
-        }
-
-        .borderless-future {
-            left: -100%;
-            color: #FDC823;
-            text-shadow: 2px 2px 4px rgba(253, 200, 35, 0.2);
-        }
-
-        .where-all-of {
-            right: 5vw;
-            text-align: right;
-            color: #333;
-        }
-
-        .humanity-thrives {
-            left: -100%;
-            color: #FDC823;
-            text-shadow: 2px 2px 4px rgba(253, 200, 35, 0.2);
-        }
-
         #research {
             background: linear-gradient(135deg, #F8F9FA 0%, #FFF 100%);
         }
@@ -130,11 +89,6 @@
             background: linear-gradient(135deg, #FFF 0%, #F8F9FA 100%);
         }
 
-        .container {
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
-        }
 
         .full-width-gif {
             width: 100%;
@@ -183,6 +137,19 @@
             box-shadow: 0 4px 12px rgba(253, 200, 35, 0.2);
         }
 
+        /* Base class for columns */
+        .w3-col {
+            float: left;
+            padding: 5px; /* Optional padding */
+            box-sizing: border-box; /* Ensures padding doesn’t affect width */
+        }
+
+        /* 50% width column for small screens and above */
+        .w3-col.s6 {
+            width: 50%;
+        }
+
+
         @media (max-width: 768px) {
             nav ul {
                 gap: 1rem;
@@ -190,6 +157,10 @@
 
             .vision-text {
                 font-size: 8vw;
+            }
+
+            .w3-col.s6 {
+                width: 100%;
             }
         }
 
@@ -223,9 +194,10 @@
     </nav>
 
     <section>
-        <div class="container">
-            <img src="thriving_1.gif" class="full-width-gif">
-        </div>
+        <div class="w3-row">
+            <div class="w3-col s6"><h1>Create a Borderless Future Where All of Humanity Thrives</h1></div>
+            <div class="w3-col s6"><img src="thriving_1.gif" style="width: 100%;"></div>
+          </div>
     </section>
 
     <section id="research">
@@ -261,4 +233,18 @@
     </section>
 
 </body>
+<script>
+    window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const screenWidth = window.innerWidth;
+
+        // Move "Hello" from -100% to 100%
+        const hello = document.getElementById("hello");
+        hello.style.transform = `translateX(${(100 + (scrollPosition / screenWidth) * 2100)}%)`;
+
+        // Move "Welcome" from 100% to -100%
+        const welcome = document.getElementById("welcome");
+        welcome.style.transform = `translateX(${(-100 -(scrollPosition / screenWidth) * 1100)}%)`;
+    });
+</script>
 </html>
