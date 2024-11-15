@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2088 Labs</title>
@@ -134,18 +136,6 @@
             box-shadow: 0 4px 12px rgba(253, 200, 35, 0.2);
         }
 
-        /* Base class for columns */
-        .w3-col {
-            float: left;
-            padding: 5px; /* Optional padding */
-            box-sizing: border-box; /* Ensures padding doesn’t affect width */
-        }
-
-        /* 50% width column for small screens and above */
-        .w3-col.s6 {
-            width: 50%;
-        }
-
 
         @media (max-width: 768px) {
             nav ul {
@@ -265,20 +255,24 @@
     </section>
 
     <section id="research">
-        <div class="container">
-            <div class="w3-row">
-                <div class="w3-col s6">
+        <div class="w3-row">
+            <!-- Left Column -->
+            <div class="w3-col s5">
                 <h1>Research</h1>
                 <p>We explore scientific breakthroughs and responsible use cases at the intersection of artificial intelligence and the future of borderless work, commerce, and communities.</p>
             </div>
-            <div class="w3-row">
-                <div class="w3-col s6">
+    
+            <!-- Middle Small Column -->
+            <div class="w3-col s2">
+                <h1 style="text-align: center; color: #FDC823; padding: 0;">/</h1>
+            </div>
+    
+            <!-- Right Column -->
+            <div class="w3-col s5">
                 <h1>Technologies</h1>
-                <p>We build commercial-ready AI products that empower humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world. </p>
+                <p>We build commercial-ready AI products that empower humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world.</p>
             </div>
         </div>
-    </div>
-    </section>
 
     <section id="technology">
         <div class="container">
