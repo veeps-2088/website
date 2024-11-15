@@ -206,6 +206,15 @@
             justify-content: space-between;
     }
 
+    .right-aligned-text {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            opacity: 0.9;
+            margin: 0;
+            transform: translateX(60%)
+        }
+
     </style>
 </head>
 <body>
@@ -234,8 +243,9 @@
 
     <section id="technology">
         <div class="container">
-            <h1>Technology</h1>
-            <p>We build commercial-ready AI products that empower humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world.</p>
+            <h1 class="text">WE BUILD TECHNOLOGIES THAT</h1>
+            <h1 id="moving-text" class="text">UNLOCK HUMAN POTENTIAL</h1>
+            <h1 class="right-aligned-text">ACROSS BORDERS</h1>
         </div>
     </section>
 
@@ -257,10 +267,15 @@
     window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY;
         const screenWidth = window.innerWidth;
-
-        // Move "Hello" from -100% to 100%
-        const hello = document.getElementById("hello");
-        hello.style.transform = `translateX(${(100 + (scrollPosition / screenWidth) * 2100)}%)`;
+        
+        // Calculate the movement for the moving text
+        const movingText = document.getElementById("moving-text");
+        const scrollPercent = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight));
+        const movement = scrollPercent * 200; // Adjust this multiplier to control speed
+        
+        // Create a continuous movement that loops
+        const position = -100 + (movement % 300); // Using 300 to ensure smooth looping
+        movingText.style.transform = `translateX(${position}%)`;
     });
 </script>
 </html>
