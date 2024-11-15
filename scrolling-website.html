@@ -73,7 +73,7 @@
         }
 
         #vision {
-            background: linear-gradient(135deg, #FDC823 0%, #FFF 100%);
+            background: linear-gradient(135deg, #FDC823 0%, #FFF7BB 100%);
         }
 
 
@@ -82,7 +82,7 @@
         }
 
         #technology {
-            background: linear-gradient(135deg, #FDC823 0%, #FFF 100%);
+            background: linear-gradient(135deg, #FDC823 0%, #FFF7BB 100%);
             overflow: hidden; /* Prevent horizontal scroll on mobile */
 
         }
@@ -218,6 +218,11 @@
             left: -100;
     }
 
+    .blue-text {
+        font-family: 'cyrene', serif;
+        color: #0077B6 /* You can adjust this blue color code as needed */
+    }
+
     .scroll-container {
             position: fixed;
             top: 50%;
@@ -254,7 +259,7 @@
 
     <section id ="vision">
         <div class="w3-row">
-            <div class="w3-col s6"><h1>2088 labs</h1><h3>We create a Borderless Future Where All of Humanity Thrives</h3></div>
+            <div class="w3-col s6"><h1>2088 labs</h1><h3>We create a <span class="blue-text">Borderless Future</span> Where All of Humanity <span class="blue-text">Thrives</span></h3></h3></div>
             <div class="w3-col s6"><img src="thriving_1.gif" style="width: 100%;"></div>
           </div>
     </section>
@@ -268,9 +273,9 @@
 
     <section id="technology">
         <div class="container">
-            <h1 class="text">WE BUILD TECHNOLOGIES THAT</h1>
+            <h1 class="text">WE BUILD <span class="blue-text">TECHNOLOGIES</span> THAT</h1>
             <h1 id="moving-text" class="text">UNLOCK HUMAN POTENTIAL</h1>
-            <h1 class="right-aligned-text">ACROSS BORDERS</h1>
+            <h1 class="right-aligned-text"><span class="blue-text">ACROSS BORDERS</span></h1>
         </div>
     </section>
 
