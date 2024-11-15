@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Name</title>
+    <title>2088 Labs</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * {
@@ -83,7 +83,11 @@
 
         #technology {
             background: linear-gradient(135deg, #FDC823 0%, #FFF 100%);
+            overflow: hidden; /* Prevent horizontal scroll on mobile */
+
         }
+
+        
 
         #contact {
             background: linear-gradient(135deg, #FFF 0%, #F8F9FA 100%);
@@ -155,6 +159,22 @@
             .w3-col.s6 {
                 width: 100%;
             }
+
+            #moving-text {
+                white-space: normal; /* Allow text to wrap on mobile */
+                text-align: left;
+                transform: none; /* Reset transform on mobile */
+                font-size: 7vw;
+            }
+
+            .text {
+                font-size: 6.5vw;
+            }
+
+            .right-aligned-text {
+                font-size: 7vw;
+            }
+
         }
 
         /* Custom scrollbar */
@@ -279,7 +299,7 @@
         const movement = scrollPercent * 200; // Adjust this multiplier to control speed
         
         // Create a continuous movement that loops
-        const position = -150 + (movement % 300); // Using 300 to ensure smooth looping
+        const position = -100 + (movement % 300); // Using 300 to ensure smooth looping
         movingText.style.transform = `translateX(${position}%)`;
     });
 </script>
