@@ -218,6 +218,13 @@
             h3 {
                 font-size: 1.2rem;
             }
+
+            #moving-text {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            }
+
         }
 
         /* Custom scrollbar */
@@ -274,11 +281,7 @@
 
 
     .right-aligned-text {
-            position: absolute;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0;
-            transform: translateX(35%);
+        text-align: right
         }
 
     #moving-text {
@@ -347,14 +350,20 @@
     window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY;
         const screenWidth = window.innerWidth;
+        const movingText = document.getElementById("moving-text");
+        
+        // Adjust movement multiplier based on screen width
+        const movementMultiplier = screenWidth <= 480 ? 200 : 400;
         
         // Calculate the movement for the moving text
-        const movingText = document.getElementById("moving-text");
         const scrollPercent = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight));
-        const movement = scrollPercent * 400; // Adjust this multiplier to control speed
+        const movement = scrollPercent * movementMultiplier;
         
-        // Create a continuous movement that loops
-        const position = -100 + (movement % 300); // Using 300 to ensure smooth looping
+        // Modify position calculation to work better on smaller screens
+        const position = screenWidth <= 480 
+            ? -25 + (movement % 75)  // Less extreme movement on mobile
+            : -100 + (movement % 300); // Original desktop behavior
+        
         movingText.style.transform = `translateX(${position}%)`;
     });
 </script>
