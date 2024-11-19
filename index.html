@@ -77,8 +77,29 @@
             margin-bottom: 1.5rem;
         }
 
+
         #home {
-            background: linear-gradient(135deg, #FDC823 0%, #FFF7BB 100%);
+            background: linear-gradient(135deg, #FDC823 0%, # 100%);
+            background-image: url('thriving_1.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay to improve text readability */
+        }
+
+        #home .w3-row {
+            position: relative;
+            z-index: 1;
         }
 
         #vision {
@@ -213,7 +234,7 @@
     h1 {
         font-family: 'cyrene', serif;
         text-transform: uppercase;
-        font-size: 5rem;
+        font-size: 5.5rem;
         margin-bottom: 1.5rem;
         color: #333;
     }
@@ -221,7 +242,7 @@
     h3 {
         font-family: 'cyrene', serif;
         text-transform: uppercase;
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     #hello {
@@ -231,6 +252,12 @@
     .blue-text {
         font-family: 'cyrene', serif;
         color: #0077B6; /* You can adjust this blue color code as needed */
+    }
+
+
+    .yellow-text {
+        font-family: 'cyrene', serif;
+        color: #FDC823; 
     }
 
 
@@ -261,10 +288,10 @@
     </nav>
 
     <section id="home">
-        <div class="w3-row">
-            <div class="w3-col s6"><h1>2088 labs</h1><h3>We create a <span class="blue-text">Borderless Future</span> Where All of Humanity <span class="blue-text">Thrives &#129321;</span></h3></h3></div>
-            <div class="w3-col s6"><img src="thriving_1.gif" style="width: 100%;"></div>
-          </div>
+        <div class="w3-row" style="text-align: center">
+                <h1 style="color: #ffffff;">2088 labs</h1>
+                <h3 style="color: #ffffff;">We create a <span class="yellow-text">Borderless Future</span> Where All of Humanity <span class="yellow-text">Thrives &#129321;</span></h3>
+        </div>
     </section>
 
     <section id="vision">
