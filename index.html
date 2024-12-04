@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico?" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,7 +105,7 @@
             text-align:  center;
         }
 
-        #vision {
+        #mission {
             background: linear-gradient(135deg, #F8F9FA 0%, #FFF 100%);
 
         }
@@ -167,8 +168,100 @@
             box-shadow: 0 4px 12px rgba(253, 200, 35, 0.2);
         }
 
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F8F9FA;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FDC823;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFD54F;
+        }
+
+        @font-face {
+        font-family: 'cyrene';
+        src: url('./fonts/cyrene.otf') format('opentype');
+    }
+
+    h1 {
+        font-family: 'cyrene', serif;
+        text-transform: uppercase;
+        font-size: 5.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-family: 'cyrene', serif;
+        text-transform: uppercase;
+        font-size: 5.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-family: 'Lato', sans-serif;
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    #hello {
+            left: -100;
+    }
+
+    .blue-text {
+        font-family: 'cyrene', serif;
+        color: #0077B6; /* You can adjust this blue color code as needed */
+    }
+
+
+    .yellow-text {
+        color: #FDC823; 
+    }
+
+
+    .right-aligned-text {
+        text-align: right
+        }
+
+    #moving-text {
+        position: relative;            
+        white-space: nowrap;
+        transform: translateX(-100%);
+    }
+
+    .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #0077B6;
+            font-size: 2rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #FDC823;
+        }
 
         @media (max-width: 768px) {
+            .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+
+
+    @media (max-width: 768px) {
             nav ul {
                 gap: 1rem;
             }
@@ -208,6 +301,11 @@
                 font-size:  1.2em;
             }
 
+            h3 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
         }
 
 
@@ -226,7 +324,7 @@
 
             h3 {
                 font-size: 1.2rem;
-                line-height: 1;
+                line-height: 1.2;
             }
 
             #moving-text {
@@ -241,95 +339,26 @@
 
         }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #F8F9FA;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #FDC823;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #FFD54F;
-        }
-
-        @font-face {
-        font-family: 'cyrene';
-        src: url('./fonts/cyrene.otf') format('opentype');
-    }
-
-    h1 {
-        font-family: 'cyrene', serif;
-        text-transform: uppercase;
-        font-size: 5.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    h2 {
-        font-family: 'cyrene', serif;
-        text-transform: uppercase;
-        font-size: 5.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    h3 {
-        font-family: 'cyrene', serif;
-        text-transform: uppercase;
-        font-size: 2.2rem;
-    }
-
-    #hello {
-            left: -100;
-    }
-
-    .blue-text {
-        font-family: 'cyrene', serif;
-        color: #0077B6; /* You can adjust this blue color code as needed */
-    }
-
-
-    .yellow-text {
-        font-family: 'cyrene', serif;
-        color: #FDC823; 
-    }
-
-
-    .right-aligned-text {
-        text-align: right
-        }
-
-    #moving-text {
-        position: relative;            
-        white-space: nowrap;
-        transform: translateX(-100%);
-    }
-
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#vision">Our Mission</a></li>
+            <li><a href="#mission">Our Mission</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#technology">Technology</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="white-text">
+    <section id="home">
         <div class="w3-row">
                 <h1>2088 labs</h1>
-                <h3>We create a <span class="yellow-text">Borderless Future</span> Where All of Humanity <span class="yellow-text">Thrives &#129321;</span></h3>
+                <h3>Throughout history, humans have migrated to survive, work, and thrive. <br>How can we bravely shape a borderless future&mdash;one where <span class="yellow-text">all of humanity thrives?</span></h3>
         </div>
     </section>
 
-    <section id="vision">
+    <section id="mission">
         <div class="container">
             <h2 class="text">WE BUILD <span class="blue-text">TECHNOLOGIES</span> THAT</h2>
             <h2 id="moving-text" class="text">UNLOCK HUMAN POTENTIAL</h2>
@@ -339,15 +368,15 @@
 
     <section id="research">
         <div class="container">
-            <h1>Research</h1>
-            <p style="color: #ffffff">We explore scientific breakthroughs and responsible use cases at the intersection of artificial intelligence and the future of borderless work, commerce, and communities.</p>
+            <h1>Frontier Research</h1>
+            <p style="color: #ffffff">We explore scientific breakthroughs and artificial intelligence use cases that define the future of borderless work, commerce, and communities.</p>
         </div>
     </section>
 
     <section id="technology">
         <div class="container">
-            <h1>Tech</h1>
-            <p>We build commercial-ready AI products that empower humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world.</p>
+            <h1>BORDERLESS Tech</h1>
+            <p>We build commercial-ready AI products that enable humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world.</p>
         </div>
     </section>
 
@@ -362,7 +391,14 @@
             </form>
             <br>We take your privacy seriously. When you share your info, it stays with us.</br>
         </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/2088-labs" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
     </section>
+
 
 </body>
 <script>
