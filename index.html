@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2088 Labs</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/48962342.js"></script>
     <style>
         * {
             margin: 0;
@@ -28,33 +29,83 @@
             font-weight: 300;
         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-        }
+ .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 2rem;
-        }
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+.logo {
+    font-family: 'cyrene', serif;
+    font-size: 2rem;
+    color: #333;
+    text-decoration: none;
+}
 
-        nav a:hover {
-            color: #FDC823;
-        }
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FDC823;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        text-align: right;
+        padding: 1rem 2rem;
+        gap: 1.5rem;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+}
+
 
         section {
             min-height: 100vh;
@@ -110,7 +161,7 @@
 
         }
 
-        #research {
+        #vision {
             background: #000000;
             color:  #ffffff;
         }
@@ -342,19 +393,28 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#mission">Our Mission</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#technology">Technology</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">2088 LABS</a>
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+
 
     <section id="home">
         <div class="w3-row">
-                <h1>2088 labs</h1>
-                <h3>Throughout history, humans have migrated to survive, work, and thrive. <br>How can we bravely shape a borderless future&mdash;one where <span class="yellow-text">all of humanity thrives?</span></h3>
+                <h1>Borderless AI Logistics</h1>
+                <h3>Helping humans and businesses <span class="yellow-text">move and thrive across borders</span></h3>
         </div>
     </section>
 
@@ -366,24 +426,24 @@
         </div>
     </section>
 
-    <section id="research">
+    <section id="vision">
         <div class="container">
-            <h1>Frontier Research</h1>
-            <p style="color: #ffffff">We explore scientific breakthroughs and artificial intelligence use cases that define the future of borderless work, commerce, and communities.</p>
+            <h1>VISION</h1>
+            <p style="color: #ffffff">Movement across borders is the ultimate expression of human agency, automomy, and freedom.</p>
         </div>
     </section>
 
     <section id="technology">
         <div class="container">
-            <h1>BORDERLESS Tech</h1>
-            <p>We build commercial-ready AI products that enable humans, companies, and governments to make smarter decisions and investments in an increasingly borderless world.</p>
+            <h1>Enterprise Solutions</h1>
+            <p>We build custom AI concierges that make workforce mobility seamless by cutting out relocation friction, simplifying logistics, and removing bureaucratic and financial hurdles.</p>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
             <h1>Contact Us</h1>
-            <p style="font-size: 1.2em">We’re in the early stages of building this future. Get in touch!</p>
+            <p style="font-size: 1.2em">We're in the early stages of building this future. Get in touch!</p>
             <form class="contact-form" id="contactForm">
                 <input type="text" id="name" placeholder="Name" required>
                 <input type="email" id="email" placeholder="Email" required>
