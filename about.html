@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico?" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - 2088 Labs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            background: #FFFFFF;
+            font-weight: 300;
+        }
+
+        .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'cyrene', serif;
+    font-size: 2rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FDC823;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        text-align: right;
+        padding: 1rem 2rem;
+        gap: 1.5rem;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+}
+
+
+        section {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.2rem;
+            color: #333;
+            max-width: 800px;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        @font-face {
+            font-family: 'cyrene';
+            src: url('./fonts/cyrene.otf') format('opentype');
+        }
+
+        h1 {
+            font-family: 'cyrene', serif;
+            text-transform: uppercase;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
+        h2 {
+            font-family: 'cyrene', serif;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            margin: 2rem 0 1rem;
+            color: #000;
+        }
+
+        .blue-text {
+            font-family: 'cyrene', serif;
+            color: #0077B6;
+        }
+
+        .yellow-text {
+            color: #FDC823; 
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-name {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            font-family: 'Lato', sans-serif;
+            color: #0077B6;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #FFF 0%, #F8F9FA 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #FDC823;
+        }
+
+        .value-title {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0077B6;
+        }
+        
+        .banner {
+            background: linear-gradient(135deg, #FDC823 0%, #FFF7BB 100%);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .banner h2 {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #0077B6;
+            font-size: 2rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #FDC823;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: #FDC823;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .back-home:hover {
+            background: #FFD54F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(253, 200, 35, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .team-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Additional mobile-specific improvements */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem !important;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+            }
+
+            section {
+                padding: 6rem 1.5rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">2088 LABS</a>
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html#mission">Our Mission</a></li>
+                <li><a href="index.html#vision">Vision</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h1>About <span class="blue-text">2088</span> Labs</h1>
+            
+            <p>We transform movement into a human experience. We are driven by a deep belief in human potential, and committed to building AI tools that reimagines the relocation experience. We design solutions that reduce friction, unlock potential, and help individuals and organizations thrive in a rapidly evolving world.</p>
+
+            <h2>MEET THE <span class="blue-text">CO-FOUNDERS</span></h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/ryan_letada.jpeg" alt="Ryan Letada CEO">
+                    </div>
+                    <div class="member-info">
+                        <div class="member-name">Ryan Letada</div>
+                        <div class="member-role">CEO</div>
+                        <p class="member-bio">Ryan is a serial entrepreneur who brings decades of experience in cross border work, previously leading initiatives at the intersection of technology and human mobility.</p>
+                        <a href="https://www.linkedin.com/in/ryanletada" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/vivian_peng.jpeg" alt="Vivian Peng CTO">
+                    </div>
+                    <div class="member-info">
+                        <div class="member-name">Vivian Peng</div>
+                        <div class="member-role">CTO</div>
+                        <p class="member-bio">Vivian has pioneered AI solutions for cross-border challenges, with extensive experience developing technology that bridges digital and physical infrastructure gaps.</p>
+                        <a href="https://www.linkedin.com/in/vpeng" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <h2>Our <span class="blue-text">Values</span></h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-title">Humans First</div>
+                    <p style="font-size: 1rem;">We build tech for people, prioritizing their needs and dreams in every decision.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-title">Borderless Thinking</div>
+                    <p style="font-size: 1rem;">We challenge conventional limitations and envision solutions that transcend geographical, cultural, and institutional boundaries.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-title">Scientific Rigor</div>
+                    <p style="font-size: 1rem;">We combine gut instinct with data to make smart choices that empower humans.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-title">Serious Play</div>
+                    <p style="font-size: 1rem;">Our commitment to a work culture where curiosity, creativity, and focus converge so that flow state isn’t accidental, it’s engineered.</p>
+                </div>
+            </div>
+
+ 
+  
+    </section>
+</body>
+</html>
